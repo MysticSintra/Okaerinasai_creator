@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Okaerinasai Creators — Expand your influence into Europe</title>
+
+<!-- Favicon & Device Icons -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#1E4470">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif+JP:wght@500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2EFE6;
+    --paper-deep:#EAE5D6;
+    --ink:#1B1B1F;
+    --ink-soft:#4A4A47;
+    --azulejo:#1E4470;
+    --azulejo-deep:#15304F;
+    --hanko:#A63A2E;
+    --line:#CFC7B2;
+    --max:760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans',sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  html[lang="ja"] body{font-family:'Noto Sans JP',sans-serif;}
+
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    color:var(--ink);
+    margin:0;
+    line-height:1.2;
+  }
+  html[lang="ja"] h1,html[lang="ja"] h2,html[lang="ja"] h3{font-family:'Noto Serif JP',serif;}
+
+  p{margin:0 0 1em 0;}
+  a{color:inherit;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+  .prose{max-width:var(--max);}
+
+  /* HEADER LAYOUT */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(242,239,230,0.96);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  
+  /* Top Block: Logo & Language Switcher */
+  .nav-top{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;max-width:1040px;margin:0 auto;
+  }
+  .brand{
+    font-family:'Fraunces',serif;font-weight:500;font-size:1.25rem;
+    letter-spacing:0.01em;white-space:nowrap;
+  }
+  .brand .jp{font-family:'Noto Sans JP',sans-serif;font-size:0.6em;color:var(--ink-soft);margin-left:8px;font-weight:400;}
+  
+  .nav-top-right{display:flex;align-items:center;gap:16px;}
+  .nav-toggle{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--ink);}
+
+  .lang-switch{display:flex;gap:2px;border:1px solid var(--line);border-radius:2px;overflow:hidden;flex-shrink:0;}
+  .lang-btn{
+    background:transparent;border:none;padding:6px 10px;font-size:0.82rem;
+    cursor:pointer;color:var(--ink-soft);font-family:'IBM Plex Sans',sans-serif;
+  }
+  .lang-btn.active{background:var(--azulejo);color:var(--paper);}
+  .lang-btn:not(.active):hover{background:var(--paper-deep);color:var(--ink);}
+
+  /* Second Block: Navigation Menu (Left to Right) */
+  .nav-bar{
+    border-top:1px solid var(--line);
+    background:var(--paper-deep);
+  }
+  .wrap-nav{
+    max-width:1040px;margin:0 auto;padding:0 24px;
+  }
+  nav ul{
+    list-style:none;display:flex;gap:36px;margin:0;padding:10px 0;
+    align-items:center;
+  }
+  nav a{
+    text-decoration:none;font-size:0.9rem;font-weight:500;
+    color:var(--ink-soft);letter-spacing:0.02em;
+    transition:color 0.15s ease;
+  }
+  nav a:hover{color:var(--azulejo);}
+
+  @media (max-width:760px){
+    .nav-bar{position:relative;}
+    nav ul{
+      display:none;position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);border-bottom:1px solid var(--line);
+      flex-direction:column;gap:0;padding:0 24px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.05);
+    }
+    nav ul.open{display:flex;}
+    nav li{border-bottom:1px solid var(--line);width:100%;}
+    nav li:last-child{border-bottom:none;}
+    nav a{display:block;padding:14px 0;}
+    .nav-toggle{display:block;}
+  }
+
+  /* HERO & SECTIONS */
+  .hero{padding:64px 0 56px;}
+  .route{width:100%;max-width:320px;height:auto;margin-bottom:32px;display:block;}
+  .hero h1{font-size:2.3rem;max-width:640px;}
+  .hero .lead{font-size:1.1rem;color:var(--ink-soft);max-width:520px;margin-top:18px;}
+  .cta-row{display:flex;gap:16px;margin-top:30px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:13px 26px;font-size:0.95rem;
+    text-decoration:none;border-radius:2px;font-weight:500;
+    border:1px solid var(--ink);cursor:pointer;
+  }
+  .btn-primary{background:var(--azulejo);border-color:var(--azulejo);color:var(--paper);}
+  .btn-primary:hover{background:var(--azulejo-deep);}
+  .btn-ghost{background:transparent;color:var(--ink);}
+  .btn-ghost:hover{background:var(--paper-deep);}
+
+  .divider{display:flex;align-items:center;gap:14px;margin:0 auto;max-width:1040px;padding:0 24px;}
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line);}
+  .divider .dot{width:6px;height:6px;border-radius:50%;background:var(--hanko);flex-shrink:0;}
+
+  section{padding:56px 0;}
+  .section-head{max-width:560px;margin-bottom:36px;}
+  .section-head .kicker{color:var(--azulejo);font-size:0.85rem;margin-bottom:10px;display:block;}
+  .section-head h2{font-size:1.75rem;}
+  .section-head p{color:var(--ink-soft);margin-top:14px;}
+
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);}
+  .fact{padding:24px 20px 24px 0;border-bottom:1px solid var(--line);}
+  .fact + .fact{border-left:1px solid var(--line);padding-left:20px;}
+  .fact .num{font-family:'Fraunces',serif;font-size:2rem;color:var(--azulejo);}
+  .fact .label{color:var(--ink-soft);font-size:0.9rem;margin-top:6px;}
+  @media (max-width:680px){
+    .facts{grid-template-columns:1fr;}
+    .fact + .fact{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:20px;}
+  }
+
+  .journey-item{
+    display:grid;grid-template-columns:56px 1fr;gap:22px;
+    padding:32px 0;border-top:1px solid var(--line);
+  }
+  .journey-item:last-child{border-bottom:1px solid var(--line);}
+  .step-num{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--hanko);}
+  .journey-item h3{font-size:1.3rem;margin-bottom:6px;}
+  .journey-item .tagline{color:var(--ink-soft);font-style:italic;margin-bottom:16px;}
+  .journey-item ul{margin:0;padding-left:20px;color:var(--ink-soft);}
+  .journey-item li{margin-bottom:6px;}
+  @media (max-width:600px){.journey-item{grid-template-columns:1fr;gap:8px;}}
+
+  .process-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:26px;}
+  .process-grid .p-item{border-left:2px solid var(--azulejo);padding-left:18px;}
+  .process-grid .p-item .num{color:var(--azulejo);font-family:'Fraunces',serif;font-size:1.05rem;}
+  @media (max-width:720px){.process-grid{grid-template-columns:1fr;}}
+
+  .trust-box{background:var(--paper-deep);border:1px solid var(--line);padding:30px;max-width:var(--max);}
+  .trust-box p{color:var(--ink-soft);margin:0;}
+
+  .faq-item{border-top:1px solid var(--line);padding:20px 0;max-width:var(--max);}
+  .faq-item h3{font-size:1.02rem;font-weight:600;font-family:'IBM Plex Sans',sans-serif;margin-bottom:8px;}
+  html[lang="ja"] .faq-item h3{font-family:'Noto Sans JP',sans-serif;}
+  .faq-item p{color:var(--ink-soft);margin:0;}
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+
+  .contact{background:var(--azulejo-deep);color:var(--paper);}
+  .contact .section-head h2{color:var(--paper);}
+  .contact .section-head p{color:#C9D6E4;}
+  .contact .section-head .kicker{color:#8FB4DA;}
+  form{display:grid;gap:16px;max-width:520px;}
+  label{font-size:0.86rem;color:#C9D6E4;display:block;margin-bottom:6px;}
+  .label-row{display:flex;justify-content:space-between;align-items:baseline;}
+  .char-count{font-size:0.78rem;color:#7E9BBB;}
+  input,select,textarea{
+    width:100%;padding:12px 14px;border:1px solid #3C5F85;
+    background:#1A3859;color:var(--paper);font-family:inherit;font-size:0.95rem;
+    border-radius:2px;
+  }
+  input::placeholder,textarea::placeholder{color:#7E9BBB;}
+  form .btn-primary{background:var(--hanko);border-color:var(--hanko);justify-self:start;margin-top:6px;}
+  form .btn-primary:hover{background:#8A2F25;}
+  .consent{font-size:0.8rem;color:#A9C0D8;display:flex;gap:8px;align-items:flex-start;}
+  .consent input{width:auto;margin-top:3px;}
+
+  footer{padding:32px 0;border-top:1px solid var(--line);}
+  footer .disclaimer{color:var(--ink-soft);font-size:0.83rem;max-width:680px;}
+  footer .copy{color:var(--ink-soft);font-size:0.83rem;margin-top:18px;}
+</style>
+</head>
+<body>
+
+<header>
+  <!-- Top Block: Brand Logo & Language Switcher -->
+  <div class="nav-top">
+    <div class="brand">Okaerinasai Creators<span class="jp">クリエイター部門</span></div>
+    <div class="nav-top-right">
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="en" onclick="applyLang('en')">EN</button>
+        <button class="lang-btn" data-lang="ja" onclick="applyLang('ja')">日本語</button>
+      </div>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('navlist').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+
+  <!-- Second Block: Navigation Menu (Left to Right) -->
+  <div class="nav-bar">
+    <nav class="wrap-nav">
+      <ul id="navlist">
+        <li><a href="#services" data-i18n="nav.services">Programs</a></li>
+        <li><a href="#process" data-i18n="nav.process">Process</a></li>
+        <li><a href="#about-team" data-i18n="nav.about">About</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Apply</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <svg class="route" viewBox="0 0 340 90" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20,70 C 100,10 240,10 320,70" fill="none" stroke="#1E4470" stroke-width="1.5"/>
+      <circle cx="20" cy="70" r="5" fill="#A63A2E"/>
+      <circle cx="320" cy="70" r="5" fill="#1E4470"/>
+      <text x="20" y="86" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="#4A4A47" text-anchor="middle">Asia</text>
+      <text x="320" y="86" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="#4A4A47" text-anchor="middle">Europe</text>
+    </svg>
+    <h1 data-i18n="hero.h1">Expand your creative empire and audience into Europe from Portugal.</h1>
+    <p class="lead" data-i18n="hero.lead">We partner with top Asian creators, influencers, and digital talents to bridge markets, secure European residency, and scale brand monetization across the EU.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-primary" data-i18n="hero.ctaPrimary">Apply for Creator Partnership</a>
+      <a href="#services" class="btn btn-ghost" data-i18n="hero.ctaGhost">Explore creator tracks</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="dot"></span></div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker" data-i18n="about.kicker">Why Europe through Portugal</span>
+      <h2 data-i18n="about.h2">Your gateway to 500M+ European followers &amp; brands.</h2>
+      <p data-i18n="about.p">Portugal offers an ideal launchpad for Asian content creators looking to internationalize. With digital nomad &amp; creator-friendly residency options, low friction, and full EU market access, you can turn your digital footprint into a global media brand.</p>
+    </div>
+    <div class="facts">
+      <div class="fact">
+        <div class="num">500M</div>
+        <div class="label" data-i18n="fact1.label">European consumer market reach and brand collaborations</div>
+      </div>
+      <div class="fact">
+        <div class="num">EU</div>
+        <div class="label" data-i18n="fact2.label">Legal residency, freedom to travel and film across Schengen</div>
+      </div>
+      <div class="fact">
+        <div class="num">100%</div>
+        <div class="label" data-i18n="fact3.label">Bilingual management &amp; localized monetization support</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="dot"></span></div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker" data-i18n="services.kicker">Creator Programs</span>
+      <h2 data-i18n="services.h2">Three paths to European growth.</h2>
+      <p data-i18n="services.p">Whether you want to launch brand deals in Europe, set up your creator media company, or secure long-term EU residency, we handle the infrastructure.</p>
+    </div>
+
+    <div class="journey">
+      <div class="journey-item">
+        <div class="step-num">01</div>
+        <div>
+          <h3 data-i18n="package1.title">Brand Expansion &amp; Sponsorships</h3>
+          <p class="tagline" data-i18n="package1.tagline">Test the European market with high-impact brand collaborations and localized campaigns.</p>
+          <ul>
+            <li data-i18n="package1.li1">Introduction to top European brands &amp; agencies</li>
+            <li data-i18n="package1.li2">Cross-cultural campaign strategy &amp; localization</li>
+            <li data-i18n="package1.li3">Contract negotiation and legal protection</li>
+            <li data-i18n="package1.li4">Audience growth analytics in Western markets</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="journey-item">
+        <div class="step-num">02</div>
+        <div>
+          <h3 data-i18n="package2.title">Media Company Setup &amp; Visa</h3>
+          <p class="tagline" data-i18n="package2.tagline">Establish your official European production entity and secure your legal residency.</p>
+          <ul>
+            <li data-i18n="package2.li1">Full company incorporation in Portugal</li>
+            <li data-i18n="package2.li2">D2 Entrepreneur or Digital Nomad Visa preparation</li>
+            <li data-i18n="package2.li3">Tax structure optimization with licensed accountants</li>
+            <li data-i18n="package2.li4">Full legal paperwork handled by partner immigration lawyers</li>
+            <li data-i18n="package2.li5">End-to-end guidance until visa approval</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="journey-item">
+        <div class="step-num">03</div>
+        <div>
+          <h3 data-i18n="package3.title">Full Management &amp; Studio Support</h3>
+          <p class="tagline" data-i18n="package3.tagline">Long-term partnership to scale your content, productions, and revenue in Europe.</p>
+          <ul>
+            <li data-i18n="package3.li1">Dedicated manager for daily European operations</li>
+            <li data-i18n="package3.li2">Production coordination &amp; local filming support in Lisbon</li>
+            <li data-i18n="package3.li3">Accounting coordination and compliant monetization</li>
+            <li data-i18n="package3.li4">Residency renewal &amp; family reunification support</li>
+            <li data-i18n="package3.li5">Exclusive networking events with European creators</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="dot"></span></div>
+
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker" data-i18n="process.kicker">How it works</span>
+      <h2 data-i18n="process.h2">From Asian digital star to European icon.</h2>
+    </div>
+    <div class="process-grid">
+      <div class="p-item">
+        <div class="num">1</div>
+        <p><strong data-i18n="p1.title">Talent Audit.</strong> <span data-i18n="p1.text">We review your current channels, content style, and expansion goals.</span></p>
+      </div>
+      <div class="p-item">
+        <div class="num">2</div>
+        <p><strong data-i18n="p2.title">Strategy &amp; Setup.</strong> <span data-i18n="p2.text">We pitch brand opportunities or draft your legal roadmap to EU residency.</span></p>
+      </div>
+      <div class="p-item">
+        <div class="num">3</div>
+        <p><strong data-i18n="p3.title">Scale in Europe.</strong> <span data-i18n="p3.text">Launch campaigns, produce content locally, and grow your European fame.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="dot"></span></div>
+
+<section id="about-team">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker" data-i18n="team.kicker">Who's behind this</span>
+      <h2 data-i18n="team.h2">Cross-border experts for digital creators.</h2>
+    </div>
+    <div class="trust-box">
+      <p data-i18n="team.text">Okaerinasai Creators connects Asian online talent with European opportunities. Backed by licensed legal and tax partners in Lisbon and digital media specialists in Japan, we bridge the gap between Asian social ecosystems and the European market safely and professionally.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="dot"></span></div>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker" data-i18n="faq.kicker">Questions</span>
+      <h2 data-i18n="faq.h2">Everything creators ask before expanding.</h2>
+    </div>
+    <div class="faq-item">
+      <h3 data-i18n="faq1.q">Do I need a massive follower count to apply?</h3>
+      <p data-i18n="faq1.a">Not necessarily. While high follower counts help, we also look for highly engaged niche creators, streamers, and digital entrepreneurs who have unique content ready for European audiences.</p>
+    </div>
+    <div class="faq-item">
+      <h3 data-i18n="faq2.q">Can I move to Europe while keeping my audience in Asia?</h3>
+      <p data-i18n="faq2.a">Yes! Many creators live in Portugal part-time or full-time while producing content for global platforms or scaling cross-border brand partnerships between Asia and Europe.</p>
+    </div>
+    <div class="faq-item">
+      <h3 data-i18n="faq3.q">How do brand deals and earnings get handled legally?</h3>
+      <p data-i18n="faq3.a">We help you structure your corporate setup and work with our licensed accounting partners to ensure all European revenues and taxes are handled properly and compliantly.</p>
+    </div>
+    <div class="faq-item">
+      <h3 data-i18n="faq4.q">Do you assist with visa applications for creators?</h3>
+      <p data-i18n="faq4.a">Yes. Through our partner immigration lawyers, we assist creators and digital nomads with the correct residency permits (such as D2 or Digital Nomad visas) to live legally in Portugal.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker" data-i18n="contact.kicker">Apply to Join</span>
+      <h2 data-i18n="contact.h2">Book your creator consultation.</h2>
+      <p data-i18n="contact.p">Tell us about your channels, platforms, and vision for Europe. Our team will review and reply within two business days.</p>
+    </div>
+    <form id="consultation-form" action="https://formspree.io/f/xzezrylk" method="POST">
+      <div>
+        <label for="name" data-i18n="label.name">Creator / Agency Name</label>
+        <input type="text" id="name" name="name" required data-i18n-placeholder="name.placeholder" placeholder="Your name or channel name">
+      </div>
+      <div>
+        <label for="email" data-i18n="label.email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com">
+      </div>
+      <div>
+        <label for="business" data-i18n="label.business">Primary Platform &amp; Handle / Link</label>
+        <input type="text" id="business" name="business" data-i18n-placeholder="business.placeholder" placeholder="e.g. YouTube / TikTok / Instagram link">
+      </div>
+      <div>
+        <label for="timeline" data-i18n="label.timeline">What is your primary goal?</label>
+        <select id="timeline" name="timeline">
+          <option data-i18n="opt1">European Brand Deals &amp; Sponsorships</option>
+          <option data-i18n="opt2">EU Company Setup &amp; Visa Residency</option>
+          <option data-i18n="opt3">Full Creator Management &amp; Expansion</option>
+        </select>
+      </div>
+      <div>
+        <div class="label-row">
+          <label for="message" data-i18n="label.message">Tell us about your audience and goals</label>
+          <span id="char-count" class="char-count">0/500</span>
+        </div>
+        <textarea id="message" rows="3" name="message" maxlength="500" data-i18n-placeholder="message.placeholder" placeholder="Optional"></textarea>
+      </div>
+      <label class="consent">
+        <input type="checkbox" id="consent" name="gdpr_consent" required>
+        <span data-i18n="label.consent">Information you submit is used only to respond to your enquiry and is processed in accordance with EU GDPR</span>
+      </label>
+      <button type="submit" id="submit-btn" class="btn btn-primary" data-i18n="btn.submit">Submit Creator Application</button>
+      <div id="form-status" style="margin-top:12px; font-size:0.9rem; color:#8FB4DA;"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="disclaimer" data-i18n="footer.disclaimer">Okaerinasai Creators provides creator strategy consulting, cross-border brand partnerships, and relocation coordination. Formal legal representation, visa filings, and tax advisory are provided by our licensed Portuguese partners. Outcomes depend on individual talent metrics and circumstances.</p>
+    <p class="copy" data-i18n="footer.copy">© 2026 Okaerinasai Creators. Lisbon, Portugal.</p>
+  </div>
+</footer>
+
+<script>
+const translations = {
+  ja: {
+    "nav.services":"プログラム","nav.process":"流れ","nav.about":"会社概要","nav.faq":"よくある質問","nav.contact":"応募する",
+    "hero.h1":"ポルトガルを拠点に、あなたのクリエイター活動と影響力をヨーロッパへ。",
+    "hero.lead":"アジアの優れたクリエイターやインフルエンサーと提携し、欧州でのブランドコラボ、ビザ取得、EU市場での収益拡大をトータルでサポートします。",
+    "hero.ctaPrimary":"クリエイターパートナーに応募する","hero.ctaGhost":"プログラムを見る",
+    "about.kicker":"なぜヨーロッパ・ポルトガルなのか","about.h2":"5億人を超えるヨーロッパのファンとブランドへアクセス。",
+    "about.p":"ポルトガルは、国際展開を目指すアジアのコンテンツクリエイターにとって理想的な拠点です。クリエイター向けのフレキシブルなビザ、低いハードル、EU全域への市場アクセスにより、あなたのデジタル活動をグローバルメディアブランドへと成長させます。",
+    "fact1.label":"ヨーロッパの消費者市場へのリーチとブランド協業の可能性",
+    "fact2.label":"シェンゲン圏内での合法的居住、自由に移動・撮影できる環境",
+    "fact3.label":"バイリンガルによるマネジメントとローカライズされた収益化支援",
+    "services.kicker":"クリエイタープログラム","services.h2":"ヨーロッパ展開のための3つのステップ。",
+    "services.p":"ヨーロッパでのブランド案件獲得、法人設立やビザ取得による移住など、あなたの目的に合わせてサポートします。",
+    "package1.title":"ブランド展開・スポンサーシップ支援","package1.tagline":"欧州のトップブランドやエージェンシーとのコラボで、現地市場での認知度を高めます。",
+    "package1.li1":"欧州ブランドおよびエージェンシーへのご紹介","package1.li2":"異文化対応のキャンペーン戦略とローカライズ",
+    "package1.li3":"契約交渉と法的な権利保護","package1.li4":"欧米市場におけるオーディエンス成長分析",
+    "package2.title":"メディア法人設立・ビザ取得サポート","package2.tagline":"ヨーロッパでの公式な拠点設立と、法的な居住権の取得を代行します。",
+    "package2.li1":"ポルトガルでの会社設立フルサポート","package2.li2":"D2起業家ビザまたはデジタルノマドビザの申請準備",
+    "package2.li3":"認可を受けた会計士による税務構造の最適化",
+    "package2.li4":"提携移民弁護士による法的手続きの完全代行",
+    "package2.li5":"ビザ承認までのあらゆる段階を伴走サポート",
+    "package3.title":"総合マネジメント・スタジオサポート","package3.tagline":"ヨーロッパでのコンテンツ制作、撮影、収益化を長期的にスケールさせます。",
+    "package3.li1":"欧州での日常業務を支える専任マネージャーの配置",
+    "package3.li2":"リスボンでの撮影・制作コーディネート",
+    "package3.li3":"会計パートナーとの連携によるコンプライアンス管理",
+    "package3.li4":"ビザ更新および家族呼び寄せのサポート",
+    "package3.li5":"ヨーロッパのクリエイターコミュニティとのネットワーク構築",
+    "process.kicker":"ご利用の流れ","process.h2":"アジアのスターから、ヨーロッパのアイコンへ。",
+    "p1.title":"タレント監査。","p1.text":"現在のチャンネル状況、コンテンツスタイル、グローバル展開の目標をヒアリングします。",
+    "p2.title":"戦略と準備。","p2.text":"ブランド案件のご提案や、EU居住に向けた法的なロードマップを作成します。",
+    "p3.title":"ヨーロッパでの飛躍。","p3.text":"現地でのキャンペーン開始や撮影を通じて、ヨーロッパでの認知度を拡大させます。",
+    "team.kicker":"運営チームについて","team.h2":"デジタルクリエイターのためのクロスボーダー専門家。",
+    "team.text":"Okaerinasai Creatorsは、アジアのオンライン才能とヨーロッパのチャンスを結びつけます。リスボンの有資格法律・税務パートナー、そして日本のデジタルメディア専門家が一体となり、安全かつプロフェッショナルにサポートします。",
+    "faq.kicker":"よくあるご質問","faq.h2":"応募前に知っておきたいこと。",
+    "faq1.q":"応募に膨大なフォロワー数が必要ですか？","faq1.a":"いいえ、必ずしもフォロワー数だけが基準ではありません。ヨーロッパのオーディエンスに向けてユニークなコンテンツを発信する熱量の高いクリエイターや配信者、デジタル起業家も歓迎しています。",
+    "faq2.q":"アジアのファン層を維持したままヨーロッパに移住できますか？","faq2.a":"はい可能です。多くのクリエイターが、グローバルプラットフォーム向けにコンテンツを制作しつつ、ポルトガルに拠点を持ってアジアとヨーロッパ間のパートナーシップを拡大しています。",
+    "faq3.q":"ブランド案件や収入の管理はどのように行われますか？","faq3.a":"法人設立のサポートを通じて、欧州での収益や税金が適法かつスムーズに処理されるよう、提携の会計パートナーがサポートします。",
+    "faq4.q":"クリエイター向けのビザ申請も手伝ってもらえますか？","faq4.a":"はい。提携する移民弁護士を通じて、クリエイターやデジタルノマドがポルトガルに合法的に滞在するための適切な居住ビザ（D2ビザやデジタルノマドビザ等）の取得を支援します。",
+    "contact.kicker":"応募フォーム","contact.h2":"クリエイター相談の予約。",
+    "contact.p":"チャンネルやプラットフォーム、ヨーロッパでのビジョンについて教えてください。2営業日以内にチームよりご連絡いたします。",
+    "label.name":"クリエイター名 / 事務所名","label.email":"メールアドレス","label.business":"主なプラットフォームとチャンネルリンク","label.timeline":"最も希望する目標は？",
+    "opt1":"欧州ブランド案件・スポンサーシップ獲得","opt2":"EU法人設立・ビザによる移住","opt3":"総合クリエイターマネジメント・拡大","label.message":"オーディエンスや目標について教えてください","btn.submit":"クリエイター応募を送信する",
+    "label.consent":"送信いただいた情報は、ご相談への対応のみに使用され、EU GDPR（EU一般データ保護規則）に準拠して処理されます。",
+    "name.placeholder":"お名前またはチャンネル名","business.placeholder":"例：YouTube / TikTok / Instagramのリンク","message.placeholder":"任意（500文字以内）",
+    "footer.disclaimer":"Okaerinasai Creatorsは、クリエイター向け戦略コンサルティング、クロスボーダーのブランドパートナーシップ、移住コーディネートを提供しています。正式な法的代理、ビザ申請、税務アドバイザリーは、有資格のポルトガル人パートナーが提供します。",
+    "footer.copy":"© 2026 Okaerinasai Creators. リスボン、ポルトガル。"
+  },
+  en: {
+    "nav.services":"Programs","nav.process":"Process","nav.about":"About","nav.faq":"FAQ","nav.contact":"Apply",
+    "hero.h1":"Expand your creative empire and audience into Europe from Portugal.",
+    "hero.lead":"We partner with top Asian creators, influencers, and digital talents to bridge markets, secure European residency, and scale brand monetization across the EU.",
+    "hero.ctaPrimary":"Apply for Creator Partnership","hero.ctaGhost":"Explore creator tracks",
+    "about.kicker":"Why Europe through Portugal","about.h2":"Your gateway to 500M+ European followers &amp; brands.",
+    "about.p":"Portugal offers an ideal launchpad for Asian content creators looking to internationalize. With digital nomad &amp; creator-friendly residency options, low friction, and full EU market access, you can turn your digital footprint into a global media brand.",
+    "fact1.label":"European consumer market reach and brand collaborations",
+    "fact2.label":"Legal residency, freedom to travel and film across Schengen",
+    "fact3.label":"Bilingual management &amp; localized monetization support",
+    "services.kicker":"Creator Programs","services.h2":"Three paths to European growth.",
+    "services.p":"Whether you want to launch brand deals in Europe, set up your creator media company, or secure long-term EU residency, we handle the infrastructure.",
+    "package1.title":"Brand Expansion &amp; Sponsorships","package1.tagline":"Test the European market with high-impact brand collaborations and localized campaigns.",
+    "package1.li1":"Introduction to top European brands &amp; agencies",
+    "package1.li2":"Cross-cultural campaign strategy &amp; localization",
+    "package1.li3":"Contract negotiation and legal protection",
+    "package1.li4":"Audience growth analytics in Western markets",
+    "package2.title":"Media Company Setup &amp; Visa","package2.tagline":"Establish your official European production entity and secure your legal residency.",
+    "package2.li1":"Full company incorporation in Portugal",
+    "package2.li2":"D2 Entrepreneur or Digital Nomad Visa preparation",
+    "package2.li3":"Tax structure optimization with licensed accountants",
+    "package2.li4":"Full legal paperwork handled by partner immigration lawyers",
+    "package2.li5":"End-to-end guidance until visa approval",
+    "package3.title":"Full Management &amp; Studio Support","package3.tagline":"Long-term partnership to scale your content, productions, and revenue in Europe.",
+    "package3.li1":"Dedicated manager for daily European operations",
+    "package3.li2":"Production coordination &amp; local filming support in Lisbon",
+    "package3.li3":"Accounting coordination and compliant monetization",
+    "package3.li4":"Residency renewal &amp; family reunification support",
+    "package3.li5":"Exclusive networking events with European creators",
+    "process.kicker":"How it works","process.h2":"From Asian digital star to European icon.",
+    "p1.title":"Talent Audit.","p1.text":"We review your current channels, content style, and expansion goals.",
+    "p2.title":"Strategy &amp; Setup.","p2.text":"We pitch brand opportunities or draft your legal roadmap to EU residency.",
+    "p3.title":"Scale in Europe.","p3.text":"Launch campaigns, produce content locally, and grow your European fame.",
+    "team.kicker":"Who's behind this","team.h2":"Cross-border experts for digital creators.",
+    "team.text":"Okaerinasai Creators connects Asian online talent with European opportunities. Backed by licensed legal and tax partners in Lisbon and digital media specialists in Japan, we bridge the gap between Asian social ecosystems and the European market safely and professionally.",
+    "faq.kicker":"Questions","faq.h2":"Everything creators ask before expanding.",
+    "faq1.q":"Do I need a massive follower count to apply?","faq1.a":"Not necessarily. While high follower counts help, we also look for highly engaged niche creators, streamers, and digital entrepreneurs who have unique content ready for European audiences.",
+    "faq2.q":"Can I move to Europe while keeping my audience in Asia?","faq2.a":"Yes! Many creators live in Portugal part-time or full-time while producing content for global platforms or scaling cross-border brand partnerships between Asia and Europe.",
+    "faq3.q":"How do brand deals and earnings get handled legally?","faq3.a":"We help you structure your corporate setup and work with our licensed accounting partners to ensure all European revenues and taxes are handled properly and compliantly.",
+    "faq4.q":"Do you assist with visa applications for creators?","faq4.a":"Yes. Through our partner immigration lawyers, we assist creators and digital nomads with the correct residency permits (such as D2 or Digital Nomad visas) to live legally in Portugal.",
+    "contact.kicker":"Apply to Join","contact.h2":"Book your creator consultation.",
+    "contact.p":"Tell us about your channels, platforms, and vision for Europe. Our team will review and reply within two business days.",
+    "label.name":"Creator / Agency Name","label.email":"Email","label.business":"Primary Platform &amp; Handle / Link","label.timeline":"What is your primary goal?",
+    "opt1":"European Brand Deals &amp; Sponsorships","opt2":"EU Company Setup &amp; Visa Residency","opt3":"Full Creator Management &amp; Expansion","label.message":"Tell us about your audience and goals","btn.submit":"Submit Creator Application",
+    "label.consent":"Information you submit is used only to respond to your enquiry and is processed in accordance with EU GDPR",
+    "name.placeholder":"Your name or channel name","business.placeholder":"e.g. YouTube / TikTok / Instagram link","message.placeholder":"Optional (max 500 chars)",
+    "footer.disclaimer":"Okaerinasai Creators provides creator strategy consulting, cross-border brand partnerships, and relocation coordination. Formal legal representation, visa filings, and tax advisory are provided by our licensed Portuguese partners. Outcomes depend on individual talent metrics and circumstances.",
+    "footer.copy":"© 2026 Okaerinasai Creators. Lisbon, Portugal."
+  }
+};
+
+function applyLang(lang){
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var key = el.getAttribute('data-i18n');
+    if(translations[lang][key] !== undefined){ el.textContent = translations[lang][key]; }
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+    var key = el.getAttribute('data-i18n-placeholder');
+    if(translations[lang][key] !== undefined){ el.placeholder = translations[lang][key]; }
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  document.getElementById('navlist').classList.remove('open');
+}
+
+// Auto-close mobile navigation when a section link is tapped
+document.querySelectorAll('#navlist a').forEach(function(link){
+  link.addEventListener('click', function(){
+    document.getElementById('navlist').classList.remove('open');
+  });
+});
+
+// Character Counter for Message Textarea
+const messageInput = document.getElementById("message");
+const charCount = document.getElementById("char-count");
+
+if (messageInput && charCount) {
+  messageInput.addEventListener("input", function() {
+    charCount.textContent = `${this.value.length}/500`;
+  });
+}
+
+// AJAX Form Submission for Formspree
+const form = document.getElementById("consultation-form");
+const status = document.getElementById("form-status");
+
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+  const data = new FormData(form);
+  const currentLang = document.documentElement.lang || 'en';
+  
+  status.textContent = currentLang === 'ja' ? "送信中..." : "Sending...";
+  
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      status.textContent = currentLang === 'ja' 
+        ? "送信が完了しました。2営業日以内にご連絡いたします。" 
+        : "Thank you! Your application has been sent. We'll reply within two business days.";
+      form.reset();
+      if (charCount) charCount.textContent = "0/500";
+    } else {
+      const errorData = await response.json();
+      if (Object.hasOwn(errorData, 'errors')) {
+        status.textContent = errorData["errors"].map(error => error["message"]).join(", ");
+      } else {
+        status.textContent = currentLang === 'ja' 
+          ? "送信エラーが発生しました。再度お試しください。" 
+          : "Oops! There was a problem submitting your form.";
+      }
+    }
+  } catch (error) {
+    status.textContent = currentLang === 'ja' 
+      ? "通信エラーが発生しました。時間を置いて再度お試しください。" 
+      : "Oops! Network error. Please try again later.";
+  }
+});
+</script>
+
+</body>
+</html>
